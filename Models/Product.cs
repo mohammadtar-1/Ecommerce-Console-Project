@@ -4,28 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ecommerce.Models
+namespace Ecommerce.model
 {
-    internal class Product
+    public class Product
     {
-        public static int idcount = 0; 
-        public Product(string Name ,double price , int quantity ) { 
+        public Product(string Name , double Price, int quntity)
+        {
             this.Name = Name;
-            this.price = price;
-            this.quantity = quantity;
-            this.CreatAt = DateTime.Now;
-            Id = ++idcount;
+            this.Price = Price;
+            this.quntity = quntity;
+
         }
-
-        public DateTime CreatAt { get; set; }
         public int Id { get; set; }
+        public int quntity { get; set; }
         public string Name { get; set; }
-
-        public int quantity { get; set; }
         public string Description { get; set; }
-
-        public string category { get; set; }
-        public double price { get; set; }
-
+        public double Price { get; set; }
+        public DateTime creatAt { get; set; }
     }
 }

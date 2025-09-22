@@ -4,32 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ecommerce.Models
+namespace Ecommerce.model
 {
-    public enum CustomerType {Normal , Vip }
+    //we have two CustomerType 
+    public enum CustomerType { Normal, vip }
     internal class Customer : User
     {
-        public static int idcount = 1;
-        public Customer(CustomerType customerType = CustomerType.Normal) 
+        public static int idcount = 0;
+        public Customer(CustomerType customerType = CustomerType.Normal)
         {
             type = customerType;
-            createAt = DateTime.Now;
-            idcount *= 3352;
-            idcount %= 1800;
-            Id= idcount;
+            creatAt = DateTime.Now;
+            idcount += 66458;
+            Id = idcount;
             orders = new List<Order>();
         }
-        public string visaInfo { get; set; }    
-        
-        DateTime createAt { get; set; }
-
-        List<Order> orders { get; set; }
-
+        public string viasainfo { get; set; }
+        DateTime creatAt { get; set; }
+         public List<Order> orders { get; set; }
         public CustomerType type { get; set; }
-
         public override Role access()
         {
             return Role.Customer;
         }
+
+        
     }
+    
 }
